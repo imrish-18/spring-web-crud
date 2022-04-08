@@ -10,9 +10,14 @@ import com.web.repo.TodoJpaRepository;
 
 
 @ComponentScan(basePackages = "com.web.controller")
+@ComponentScan(basePackages = "com.web.jwt.resource")
+@ComponentScan(basePackages = "com.web.jwt")
 @ComponentScan(basePackages = "com.web.repo")
+@ComponentScan(basePackages = "org.springframework.security.authentication")
 @SpringBootApplication(scanBasePackages={
-"com.web.controller", "com.web.repo"})
+"com.web.controller", "com.web.repo","com.web.jwt.resource","com.web.jwt","org.springframework.security.authentication"})
+
+
 @EnableMongoRepositories(basePackageClasses = {StudentRepository.class,TodoJpaRepository.class})
 public class SpringWebCrudApplication {
 
